@@ -20,12 +20,12 @@ int main() {
     
     char buffer[32];
     char* token = strtok(line, " ");
+    count++;
     printf("Test %d: %s", count, token);
     char pass[5];
 
     //Tests div_convert
     if (line[0] == 'd') {
-      count++;
       token = strtok(NULL, " ");
       int n = atoi(token);
       token = strtok(NULL, " ");
@@ -53,7 +53,6 @@ int main() {
 
     //Tests sub_convert
     else if (line[0] == 's') {
-      count++;
       token = strtok(NULL, " ");
       int n = atoi(token);
       token = strtok(NULL, " ");
@@ -81,7 +80,6 @@ int main() {
 
     //Tests print_tables
     else if (line[0] == 'p') {
-    count++;
     token = strtok(NULL, " ");
     int n = atoi(token);
 
@@ -106,7 +104,5 @@ int main() {
 }
   }
   fclose(file);
-  count--;
-  pass_count--;
   printf("\nSummary: %d/%d tests passed", pass_count, count);
 }
